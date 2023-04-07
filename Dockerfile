@@ -1,19 +1,28 @@
 # ==== CONFIGURE =====
 # Use a Node 16 base image
-FROM node:16-alpine 
+FROM node:18-alpine 
 # Set the working directory to /app inside the container
+# set working directory
 WORKDIR /app
-# Copy app files
+
+# Copies package.json and package-lock.json to Docker environment
+COPY package*.json ./
+
+# Installs all node packages
+RUN npm install
+
+# Copies everything over to Docker environment
 COPY . .
-# ==== BUILD =====
-# Install dependencies (npm ci makes sure the exact versions in the lockfile gets installed)
-RUN npm ci 
-# Build the app
-RUN npm run build
-# ==== RUN =======
-# Set the env to "production"
-ENV NODE_ENV production
-# Expose the port on which the app will be running (3000 is the default that `serve` uses)
-EXPOSE 3000
-# Start the app
-CMD [ "npx", "serve", "build" ]
+
+# Build for production.
+RUN npm run build --production
+
+# Install `serve` to run the application.
+RUN npm install -g serve
+
+# Uses port which is used by the actual application
+EXPOSE 5000
+
+# Run application
+#CMD [ "npm", "start" ]
+CMD serve -s build
