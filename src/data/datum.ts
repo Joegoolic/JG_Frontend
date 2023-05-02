@@ -15,7 +15,7 @@ export type TDatum = {
 }
 export type TdatumTypes = (typeof datumTypes)[number]
 
-export const datumTypes: string[] = ['Skill', 'Project']
+export const datumTypes: TdatumTypes = ['Skill', 'Project']
 
 export const datum_points: TDatum = {
     JavaScript: {

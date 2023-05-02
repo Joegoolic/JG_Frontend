@@ -95,16 +95,27 @@ export const ContainerAny = styled.div.attrs(
     justify-content: ${(props) => (props.direction ? props.direction : 'center')};
     align-items: center;
 `
-export const BoxAny = styled.div.attrs((props: { view: boolean; thin: boolean }) => props)`
+export const BoxAny = styled.div.attrs(
+    (props: {
+        thin: boolean
+        direction: string
+        margin: string
+        height: string
+        width: string
+        borderRedius: string
+        bgColor: string
+    }) => props
+)`
     display: flex;
     justify-content: ${(props) => (props.direction ? props.direction : 'center')};
     align-items: ${(props) => (props.direction ? props.direction : 'center')};
-    flex-direction:  ${(props) => (props.direction ? props.direction : 'column')};
-    width: ${(props) => (props.width ? props.width : '100vw')}
-    height: ${(props) => (props.height ? props.height : '100vh')}
-    margin: ${(props) => (props.margin ? props.margin : '0')}
-    background-color: ${(props) => (props.bg ? props.bg : 'transparent')}
-    `
+    flex-direction: ${(props) => (props.direction ? props.direction : 'column')};
+    width: ${(props) => (props.width ? props.width : '100vw')};
+    height: ${(props) => (props.height ? props.height : '100vh')};
+    margin: ${(props) => (props.margin ? props.margin : '0')};
+    background-color: ${(props) => (props.bgColor ? props.bgColor : 'white')};
+    border-radius: ${(props) => (props.borderRadius ? props.borderRadius : '0px')};
+`
 
 export const ContainerRight = styled.div`
     display: flex;
