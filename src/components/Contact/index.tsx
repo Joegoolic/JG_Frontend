@@ -20,7 +20,7 @@ interface FormValues {
 }
 
 export default function Contact() {
-    const form = useRef<HTMLFormElement>()
+    const form = useRef<HTMLFormElement>(null)
     const sendEmail = (e) => {
         e.preventDefault()
         emailjs

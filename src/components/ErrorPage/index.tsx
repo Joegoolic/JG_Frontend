@@ -9,7 +9,6 @@ function ErrorPage() {
     const [countdown, setCountdown] = useState(5)
 
     const handleClick = () => {
-        setButtonClicked(true)
         setTimeout(() => {
             navigate('/')
         }, 1500)

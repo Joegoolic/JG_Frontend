@@ -25,7 +25,7 @@ export default function Datum(props) {
         <AnimatedContainer key={props.data.Name} view={inView} ref={ref} thin={thin}>
             {widerSide === 'left' ? (
                 <Spacer width={thin ? 0 : `${props.data.Widths.Width1}vw`}>
-                    <Parallax translateY={(-15, 30)}>
+                    <Parallax>
                         <img className="skillsImage" src={`/${props.data.Logo}`} />
                     </Parallax>
                 </Spacer>
@@ -33,7 +33,7 @@ export default function Datum(props) {
                 <Spacer width={thin ? 0 : `${props.data.Widths.Width1}vw`} />
             )}
 
-            <Parallax translateY={(-15, 30)}>
+            <Parallax>
                 <Item width={thin ? '90vw' : `${props.data.Widths.Width2}vw`}>
                     <h3 className="skillHeader">{props.data.Name}</h3>
                     <p className="skillBody">{props.data.Description}</p>
@@ -41,7 +41,7 @@ export default function Datum(props) {
             </Parallax>
             {widerSide === 'right' ? (
                 <Spacer width={thin ? 0 : `${props.data.Widths.Width3}vw`}>
-                    <Parallax translateY={(-15, 30)}>
+                    <Parallax>
                         <img className="skillsImage" src={`/${props.data.Logo}`} />
                     </Parallax>
                 </Spacer>

@@ -6,6 +6,7 @@ export type TDatum = {
         LogoPosition?: string
         Logo: string
         Link?: string
+        Technologies?: string[]
         Widths: {
             Width1: number
             Width2: number
@@ -15,7 +16,7 @@ export type TDatum = {
 }
 export type TdatumTypes = (typeof datumTypes)[number]
 
-export const datumTypes: TdatumTypes = ['Skill', 'Project']
+export const datumTypes = ['Skill', 'Project']
 
 export const datum_points: TDatum = {
     JavaScript: {
