@@ -1,0 +1,53 @@
+import React, { useContext } from 'react'
+import { Box } from '@mui/material'
+import { Parallax } from 'react-scroll-parallax'
+import { useInView } from 'react-intersection-observer'
+import { generateRandomNumbersInRange } from 'utilities/numberGenerators'
+import { Spacer } from 'components/Spacer/Spacer'
+import { Item } from 'components/Item/Item'
+import styled, { css } from 'styled-components'
+import useMediaQuery from '@mui/material/useMediaQuery'
+import { UserDataContext } from 'context/UserDataContext'
+import { AnimatedContainer } from 'components/styled'
+
+export default function Datum(props) {
+    const { ref, inView, entry } = useInView({
+        /* Optional options */
+        threshold: 0.5,
+    })
+    const { thin } = useContext(UserDataContext)
+    const widerSide = thin
+        ? 'left'
+        : props.data.Widths.Width1 < props.data.Widths.Width3
+        ? 'left'
+        : 'right'
+    return (
+        <AnimatedContainer key={props.data.Name} view={inView} ref={ref} thin={thin}>
+            {widerSide === 'left' ? (
+                <Spacer width={thin ? 0 : `${props.data.Widths.Width1}vw`}>
+                    <Parallax>
+                        <img className="skillsImage" src={`/${props.data.Logo}`} />
+                    </Parallax>
+                </Spacer>
+            ) : (
+                <Spacer width={thin ? 0 : `${props.data.Widths.Width1}vw`} />
+            )}
+
+            <Parallax>
+                <Item width={thin ? '90vw' : `${props.data.Widths.Width2}vw`}>
+                    <h3 className="skillHeader">{props.data.Name}</h3>
+                    <p className="skillBody">{props.data.Description}</p>
+                </Item>
+            </Parallax>
+            {widerSide === 'right' ? (
+                <Spacer width={thin ? 0 : `${props.data.Widths.Width3}vw`}>
+                    <Parallax>
+                        <img className="skillsImage" src={`/${props.data.Logo}`} />
+                    </Parallax>
+                </Spacer>
+            ) : (
+                <Spacer width={thin ? 0 : `${props.data.Widths.Width3}vw`} />
+            )}
+        </AnimatedContainer>
+    )
+}
