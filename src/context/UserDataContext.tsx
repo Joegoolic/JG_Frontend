@@ -15,7 +15,9 @@ export function UserDataProvider({ children }) {
 
     useEffect(() => {
         function handleResize() {
-            if (window.innerWidth < 1024) {
+
+            if (window.innerWidth < breakpoints.sm) {
+
                 setThin(true)
             } else {
                 setThin(false)
