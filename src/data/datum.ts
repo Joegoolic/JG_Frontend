@@ -24,10 +24,8 @@ export const datum_points: TDatum = {
         Type: 'Skill',
         LogoPosition: 'left',
         Logo: 'javascript.svg',
-
-        Description: `As a mid-level fullstack engineer, I am experienced in using JavaScript for both front-end and back-end development. I have expertise in popular libraries and frameworks such as React, Next,js, Node.js, and Express.`,
+        Description: `I am experienced in using JavaScript for both front-end and back-end development. I have expertise in popular libraries and frameworks such as React, Next,js, Node.js, and Express.`,
         Link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
-
         Widths: {
             Width1: 55,
             Width2: 40,
@@ -39,9 +37,7 @@ export const datum_points: TDatum = {
         Type: 'Skill',
         LogoPosition: 'right',
         Logo: 'typescript.svg',
-
-        Description: `As a mid-level fullstack engineer, I have utilized TypeScript in various professional settings to build scalable and maintainable web applications. For instance at Adaptive Financial Consulting, I worked on a React-based web application where I utilized TypeScript's strong typing to ensure that the data passed between components was consistent and error-free ensuring a more reliable and scalable application`,
-
+        Description: `I have utilized TypeScript in various professional settings to build scalable and maintainable web applications. For instance at Adaptive Financial Consulting, I worked on a React-based web application where I utilized TypeScript's strong typing to ensure that the data passed between components was consistent and error-free ensuring a more reliable and scalable application`,
         Link: 'https://www.typescriptlang.org/',
         Widths: {
             Width1: 16,
@@ -98,9 +94,7 @@ export const datum_points: TDatum = {
         LogoPosition: 'right',
         Logo: 'nodejs.svg',
         Link: 'https://nodejs.org/en',
-
         Description: `I enjoy using Node.js in my personal projects for its versatility and efficiency. I have experience building server-side applications with Node.js, using frameworks such as Express.js to build RESTful APIs and handle HTTP requests. I have also utilized Node.js's support for asynchronous programming to build real-time applications with WebSockets and event-driven architectures. I have used Node.js's support for modern Typescript syntax to write modular and maintainable code. My experience with Node.js has allowed me to build fast, efficient, and scalable applications.`,
-
         Widths: {
             Width1: 19,
             Width2: 33,
@@ -113,9 +107,7 @@ export const datum_points: TDatum = {
         LogoPosition: 'right',
         Logo: 'express.svg',
         Link: 'https://expressjs.com/',
-
         Description: `As a mid-level full-stack engineer, I have extensive experience using Express.js to build robust and scalable server-side applications. I utilize Express.js technologies and best practices to create efficient and maintainable applications. I follow RESTful API design principles to ensure that my APIs are standardized, easy to use, and well-documented. I utilize middleware functions to handle tasks such as authentication, logging, and error handling, improving the security and reliability of the applications. I also leverage Express.js's support for modular application structure and Typescript, making it easier to test, debug, and maintain the codebase. During my time working with Express.js I have been able to build Efficient and complex applications with relative ease.`,
-
         Widths: {
             Width1: 26,
             Width2: 33,
@@ -173,9 +165,7 @@ export const datum_points: TDatum = {
         Logo: 'docker.svg',
         Link: 'https://www.docker.com/',
         Description:
-
             'I have personal experience using Docker to develop, deploy, and manage software applications. I use Docker to containerize applications and create portable and scalable environments that are isolated from the underlying host system I have used Docker containers to host Mongodb instances, express.js backends and serve Next.js frontend applications. I am skilled in using Docker commands and tools, including creating Docker images, building and deploying containers',
-
         Widths: {
             Width1: 20,
             Width2: 33,
