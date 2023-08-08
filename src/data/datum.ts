@@ -187,14 +187,29 @@ export const datum_points: TDatum = {
             Width3: 17,
         },
     },
+    'Reactive Trader': {
+        Name: 'Reactive Trader',
+        Type: 'Project',
+        LogoPosition: 'left',
+        Logo: 'null',
+        Link: 'https://reactivetrader.com/',
+        Description:
+            'This website was built using React, TypeScript, and Vite. It is a single page application that uses React Hooks to manage state and React Router to handle routing.',
+        Technologies: ['React', 'Next.js', 'TypeScript', 'Material-UI', 'Vite'],
+        Widths: {
+            Width1: 33,
+            Width2: 33,
+            Width3: 33,
+        },
+    },
     StockAlly: {
         Name: 'StockAlly',
         Type: 'Project',
         LogoPosition: 'left',
         Logo: 'stockally.svg',
-        Link: 'stockally.com',
+        Link: 'https://stockally.us',
         Description:
-            'StockAlly is a stock market simulator that allows users to create a portfolio of stocks and track their performance. It was built using React, Next.js, TypeScript, Material-UI, and Vite. It is a single page application that uses React Hooks to manage state and React Router to handle routing.',
+            'StockAlly is a stock market simulator that allows users to create a portfolio of stocks and track their performance. It was built using React, TypeScript, and Vite. It is a single page application that uses React Hooks to manage state and React Router to handle routing.',
         Technologies: ['React', 'Next.js', 'TypeScript', 'Material-UI', 'Vite'],
         Widths: {
             Width1: 10,
@@ -207,7 +222,7 @@ export const datum_points: TDatum = {
         Type: 'Project',
         LogoPosition: 'right',
         Logo: 'stockally.svg',
-        Link: 'stockally.com',
+        Link: 'stockally.us',
         Description:
             'StockAlly API is a RESTful API that provides data for the StockAlly stock market simulator. It was built using Node.js, Express, TypeScript, and MongoDB. It is a RESTful API that uses the MVC pattern to manage the data.',
         Technologies: ['Node.js', 'Express', 'TypeScript', 'MongoDB'],

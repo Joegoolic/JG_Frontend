@@ -8,7 +8,7 @@ import { Item } from 'components/Item/Item'
 import styled, { css } from 'styled-components'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { UserDataContext } from 'context/UserDataContext'
-import { AnimatedContainer } from 'components/styled'
+import { AnimatedContainer, ButtonS } from 'components/styled'
 
 export default function Datum(props) {
     const { ref, inView, entry } = useInView({
@@ -26,7 +26,9 @@ export default function Datum(props) {
             {widerSide === 'left' ? (
                 <Spacer width={thin ? 0 : `${props.data.Widths.Width1}vw`}>
                     <Parallax>
-                        <img className="skillsImage" src={`/${props.data.Logo}`} />
+                        <a href={`${props.data.Link}`} target="_blank">
+                            <img className="skillsImage" src={`/${props.data.Logo}`} />
+                        </a>
                     </Parallax>
                 </Spacer>
             ) : (
@@ -37,12 +39,17 @@ export default function Datum(props) {
                 <Item width={thin ? '90vw' : `${props.data.Widths.Width2}vw`}>
                     <h3 className="skillHeader">{props.data.Name}</h3>
                     <p className="skillBody">{props.data.Description}</p>
+                    <ButtonS className="linkButton" onClick={() => window.open(props.data.Link)}>
+                        Click here to learn more about {props.data.Name}
+                    </ButtonS>
                 </Item>
             </Parallax>
             {widerSide === 'right' ? (
                 <Spacer width={thin ? 0 : `${props.data.Widths.Width3}vw`}>
                     <Parallax>
-                        <img className="skillsImage" src={`/${props.data.Logo}`} />
+                        <a href={`${props.data.Link}`} target="_blank">
+                            <img className="skillsImage" src={`/${props.data.Logo}`} />
+                        </a>
                     </Parallax>
                 </Spacer>
             ) : (
