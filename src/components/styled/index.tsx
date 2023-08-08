@@ -1,5 +1,6 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
+import { theme } from '../../theme/index'
 
 const meldInAnimation = keyframes`
     0% {
@@ -25,7 +26,7 @@ const meldOutAnimation = keyframes`
 export const StyledGradient_h1_A = styled.h1.attrs((props: { thin: boolean }) => props)`
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, var(--contrastText), #6f6f6f, #161616);
+    background: linear-gradient(to right, var(--contrastText), #6f6f6f, #595959);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
@@ -157,4 +158,60 @@ export const StyledForm = styled.form.attrs((props: { view: boolean; thin: boole
     padding: 20px;
     width: 320px;
     z-index: 10;
+`
+export const ButtonS = styled.button.attrs((props: any) => props)`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: ${(props) => props?.width || 'auto'};
+    height: ${(props) => props?.height || 'auto'};
+    padding: ${(props) => props.padding || '0.5rem 0.75rem'};
+    font-size: ${(props) => props?.fontSize || '1rem'};
+    font-weight: ${(props) => props.fontWeight || '500'};
+    color: ${(props) => props.color || props.color || '#e0e0e0'};
+    background-color: ${(props) => props.backgroundColor || props.colors || '#00adef'};
+    border-radius: ${(props) => props.borderRadius || '0.375rem'};
+    border-width: ${(props) => props.borderWidth || '0px'};
+    border-color: transparent;
+    border-style: solid;
+    overflow: hidden;
+    position: relative;
+    transition: background-color 0.3s;
+    border: none;
+    word-break: break-word;
+    font-family: inherit;
+
+    &:hover {
+        background-color: ${(props) => '#00adef' || '#000'};
+        cursor: pointer;
+    }
+
+    &:focus-visible {
+        outline: 2px solid ${(props) => '#00adef' || '#000'};
+        outline-offset: 2px;
+    }
+
+    &:active::after {
+        content: '';
+        display: block;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        animation: ripple 0.7s ease-out;
+    }
+
+    @keyframes ripple {
+        from {
+            transform: scale(0);
+        }
+        to {
+            transform: scale(2.5);
+            opacity: 1;
+        }
+    }
 `

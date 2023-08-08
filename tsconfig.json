@@ -19,9 +19,10 @@
         "noImplicitAny": false,
         "paths": {
             "@/*": ["src/*"],
-            "@components/*": ["src/components/*"],
-            "@context/*": ["src/context/*"],
-            "@data/*": ["src/data/*"]
+            "@components/*": ["@/components/*"],
+            "@context/*": ["@/context/*"],
+            "@data/*": ["@/data/*"],
+            "@theme/*": ["@/theme/*"]
         }
     },
     "include": ["src", ".src/setupTest.ts"],

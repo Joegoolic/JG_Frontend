@@ -19,20 +19,24 @@ export default function Root() {
                     gridTemplateColumns: 'repeat(4, 1fr)',
                     gridTemplateRows: 'auto',
                     gridTemplateAreas: `"intro intro intro intro"
-                                    "skills skills skills skills"
+
                                     "projects projects projects projects"
+                                    "skills skills skills skills"
+
                                     "contact contact contact contact"`,
                 }}
             >
                 <Box sx={{ gridArea: 'intro' }}>
                     <Introduction />
                 </Box>
-                <Box sx={{ gridArea: 'skills' }}>
-                    <Skills />
-                </Box>
+
                 <Box sx={{ gridArea: 'projects' }}>
                     <Projects />
                 </Box>
+                <Box sx={{ gridArea: 'skills' }}>
+                    <Skills />
+                </Box>
+
                 <Box
                     sx={{
                         gridArea: 'contact',
