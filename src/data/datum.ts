@@ -171,6 +171,7 @@ export const datum_points: TDatum = {
             Width2: 33,
             Width3: 47,
         },
+        x,
     },
     'Joseph Goolic Website': {
         Name: 'Joseph Goolic Website',
