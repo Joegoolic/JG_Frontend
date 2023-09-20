@@ -54,5 +54,5 @@ Feel free to open issues or PRs if you find any problems or have suggestions for
 📝 License
 Open-source software licensed under the MIT license.
 
-👥 Author
+👥
 Created by Joseph Goolic
