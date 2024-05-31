@@ -19,6 +19,19 @@ export type TdatumTypes = (typeof datumTypes)[number]
 export const datumTypes = ['Skill', 'Project']
 
 export const datum_points: TDatum = {
+    Swift: {
+        Name: 'Swift',
+        Type: 'Skill',
+        LogoPosition: 'left',
+        Logo: 'SwiftIcon.svg',
+        Description: `I have used Swift to create an IOS game called Space Python where I am the sole Developer.`,
+        Link: 'https://developer.apple.com/swift/resources/',
+        Widths: {
+            Width1: 16,
+            Width2: 33,
+            Width3: 51,
+        },
+    },
     JavaScript: {
         Name: 'JavaScript',
         Type: 'Skill',
@@ -172,6 +185,45 @@ export const datum_points: TDatum = {
             Width3: 47,
         },
     },
+    'Space Python': {
+        Name: 'Space Python',
+        Type: 'Project',
+        LogoPosition: 'right',
+        Logo: 'snakeIconSVG.svg',
+        Link: 'https://spacepython.ninja/',
+        Description: `Space Python is a 2D space-themed arcade game that I developed for iOS using SpriteKit and Swift. The game features a unique gameplay mechanic where the player controls a snake-like spaceship that grows longer as it collects apples. The player must navigate through a series of obstacles and enemies while avoiding collisions with the python's own body. I implemented advanced features such as power-ups, enemy AI, and dynamic level generation to create a challenging and engaging gameplay experience. I also integrated Google Ad Mobs and Apple Ad Campaigns to monetize the game and increase user engagement. Space Python showcases my skills in game development, user interface design, and mobile app monetization.`,
+        Technologies: [
+            'SpriteKit',
+            'Swift',
+            'SwiftUI',
+            'Google Ad Mobs',
+            'Apple Ad Campaigns',
+        ],
+        Widths: {
+            Width1: 33,
+            Width2: 33,
+            Width3: 33,
+        },
+    },
+    'Space Python Website': {
+        Name: 'Space Python Website',
+        Type: 'Project',
+        LogoPosition: 'left',
+        Logo: 'snakeIconSVG.svg',
+        Link: 'https://spacepython.ninja/',
+        Description: `I developed the Space Python website as a supporting website for my IOS game using React 18 and TypeScript. The site features a sleek and modern design, with a focus on user experience and interactivity. I utilized Vite for an optimized build process and fast development experience. The site also includes advanced features such as email notifications via EmailJS and a custom contact form. Overall, the Space Python website showcases my skills in frontend development and user interface design.`,
+        Technologies: [
+            'React',
+            'TypeScript',
+            'Vite',
+            'EmailJS',
+        ],
+        Widths: {
+            Width1: 10,
+            Width2: 33,
+            Width3: 57,
+        },
+    },
     'Joseph Goolic Website': {
         Name: 'Joseph Goolic Website',
         Type: 'Project',
@@ -181,7 +233,6 @@ export const datum_points: TDatum = {
         Description: `I developed Josephgoolic.com as a single-page application using the cutting-edge React 18 framework, combined with TypeScript for type safety. The site employs Vite for an optimized build process and ultra-fast development experience. The UI leverages Material-UI, and I've incorporated a range of other specialized libraries for effects like scrolling parallax and typewriter animations.`,
         Technologies: [
             'React',
-            'Next.js',
             'TypeScript',
             'Material-UI',
             'Vite',

@@ -35,7 +35,7 @@ export default function Introduction() {
                 <AnimatedContainer view={inView} thin={thin}>
                     <Parallax translateY={[-10, 10]}>
                         <StyledGradient_h1_A thin={thin}>
-                            Hi, My name is Joseph Goolic and I'm a Full Stack Web Developer
+                            Hi, My name is Joseph Goolic and I'm a Software Engineer
                         </StyledGradient_h1_A>
                     </Parallax>
                 </AnimatedContainer>

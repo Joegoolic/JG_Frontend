@@ -20,7 +20,7 @@ describe('Open Home page', () => {
 
         mockAllIsIntersecting(true)
         const title = screen.getByText(
-            `Hi, My name is Joseph Goolic and I'm a Full Stack Web Developer`
+            `Hi, My name is Joseph Goolic and I'm a Software Engineer`
         )
         expect(title).toBeTruthy()
     })
