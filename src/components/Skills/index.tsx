@@ -3,15 +3,16 @@ import { datum_points } from 'data/datum'
 import Datum from 'components/Datum'
 import useDatumType from 'utilities/useDatumType'
 import { Container, ContainerAny, StyledGradient_h1_B } from 'components/styled'
-import { useContext } from 'react'
-import { UserDataContext } from 'context/UserDataContext'
+import { useUserData } from 'context/UserDataContext'
 
 export default function Skills() {
-    const { thin } = useContext(UserDataContext)
-    const halfway = Math.ceil(useDatumType('Skill').length / 2)
+    const { thin } = useUserData()
+    const skills = useDatumType('Skill')
+    const halfway = skills ? Math.ceil(skills.length / 2) : 0
 
     const getSkills = () => {
-        return useDatumType('Skill').map((datum, index) =>
+        if (!skills) return null
+        return skills.map((datum, index) =>
             index === halfway ? (
                 <div key="index">
                     <ContainerAny direction={'right'}>

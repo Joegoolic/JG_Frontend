@@ -12,7 +12,7 @@ describe('Open Home page', () => {
     test('renders correctly', () => {
         render(
             <ParallaxProvider>
-                <UserDataContext.Provider value={true}>
+                <UserDataContext.Provider value={{ thin: true, setThin: () => {} }}>
                     <Root />
                 </UserDataContext.Provider>
             </ParallaxProvider>

@@ -1,6 +1,58 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import { theme } from '../../theme/index'
+import { HTMLAttributes, ForwardedRef } from 'react'
+import type { 
+    ThinProps, 
+    IntroGridProps, 
+    GridItemProps, 
+    ImageContainerProps,
+    StyledImageProps,
+    BlurredBackgroundProps,
+    AnimatedItemProps,
+    DatumHeaderProps,
+    ProjectContainerProps
+} from './types'
+
+// Additional interfaces for components
+interface ContainerAnyProps extends HTMLAttributes<HTMLDivElement> {
+    view?: boolean;
+    thin?: boolean;
+    direction?: string;
+}
+
+interface BoxAnyProps extends HTMLAttributes<HTMLDivElement> {
+    thin?: boolean;
+    direction?: string;
+    margin?: string;
+    height?: string;
+    width?: string;
+    borderRadius?: string;
+    bgColor?: string;
+}
+
+interface AnimatedContainerProps extends HTMLAttributes<HTMLDivElement> {
+    view?: boolean;
+    thin?: boolean;
+}
+
+interface StyledFormProps extends HTMLAttributes<HTMLFormElement> {
+    view?: boolean;
+    thin?: boolean;
+}
+
+interface ButtonSProps extends HTMLAttributes<HTMLButtonElement> {
+    width?: string;
+    height?: string;
+    padding?: string;
+    fontSize?: string;
+    fontWeight?: string;
+    color?: string;
+    backgroundColor?: string;
+    colors?: string;
+    borderRadius?: string;
+    borderWidth?: string;
+}
 
 const meldInAnimation = keyframes`
     0% {
@@ -23,7 +75,7 @@ const meldOutAnimation = keyframes`
     }
 `
 
-export const StyledGradient_h1_A = styled.h1.attrs((props: { thin: boolean }) => props)`
+export const StyledGradient_h1_A = styled.h1<ThinProps>`
     width: 100%;
     height: 100%;
     background: linear-gradient(to right, var(--contrastText), #6f6f6f, #595959);
@@ -33,7 +85,7 @@ export const StyledGradient_h1_A = styled.h1.attrs((props: { thin: boolean }) =>
     transition: all 0.3s ease-in-out;
     font-size: ${(props) => (props.thin ? '1.75rem' : '2.5rem')};
 `
-export const StyledGradient_h1_B = styled.h1.attrs((props: { thin: boolean }) => props)`
+export const StyledGradient_h1_B = styled.h1<ThinProps>`
     font-size: ${(props) => (props.thin ? '1.75rem' : '2.5rem')};
     background: -webkit-linear-gradient(#ffffff, #2f2f2f);
     -webkit-background-clip: text;
@@ -44,7 +96,7 @@ export const StyledGradient_h1_B = styled.h1.attrs((props: { thin: boolean }) =>
     margin: 2.5rem;
     transition: all 0.3s ease-in-out;
 `
-export const IntroGrid = styled.div.attrs((props: { thin: boolean }) => props)`
+export const IntroGrid = styled.div<IntroGridProps>`
     display: grid;
     grid-template-columns: ${(props) => (props.thin ? '1fr' : '1fr 1fr')};
     grid-template-rows: ${(props) => (props.thin ? '1fr' : '1fr 1fr')};
@@ -60,7 +112,7 @@ export const IntroGrid = styled.div.attrs((props: { thin: boolean }) => props)`
     justify-content: center;
     align-items: center;
 `
-export const IntroImageContainer = styled.div.attrs((props: { thin: boolean }) => props)`
+export const IntroImageContainer = styled.div<ThinProps>`
     grid-area: IntroImageContainer;
     display: flex;
     flex: 1 1 auto;
@@ -89,24 +141,12 @@ export const Container = styled.div`
     margin-top: 20vh;
     justify-content: center;
 `
-export const ContainerAny = styled.div.attrs(
-    (props: { view: boolean; thin: boolean; direction: string }) => props
-)`
+export const ContainerAny = styled.div<ContainerAnyProps>`
     display: flex;
     justify-content: ${(props) => (props.direction ? props.direction : 'center')};
     align-items: center;
 `
-export const BoxAny = styled.div.attrs(
-    (props: {
-        thin: boolean
-        direction: string
-        margin: string
-        height: string
-        width: string
-        borderRedius: string
-        bgColor: string
-    }) => props
-)`
+export const BoxAny = styled.div<BoxAnyProps>`
     display: flex;
     justify-content: ${(props) => (props.direction ? props.direction : 'center')};
     align-items: ${(props) => (props.direction ? props.direction : 'center')};
@@ -128,9 +168,7 @@ export const ContainerCenter = styled.div`
     justify-content: center;
     align-items: center;
 `
-export const AnimatedContainer = styled.div.attrs(
-    (props: { view: boolean; thin: boolean }) => props
-)`
+export const AnimatedContainer = styled.div<AnimatedContainerProps>`
     display: flex;
     height: 100%;
     opacity: 0; /* set initial opacity to 0 */
@@ -150,7 +188,7 @@ export const AnimatedContainer = styled.div.attrs(
     }
 `
 
-export const StyledForm = styled.form.attrs((props: { view: boolean; thin: boolean }) => props)`
+export const StyledForm = styled.form<StyledFormProps>`
     background-color: #15172b;
     border-radius: 20px;
     box-sizing: border-box;
@@ -159,7 +197,7 @@ export const StyledForm = styled.form.attrs((props: { view: boolean; thin: boole
     width: 320px;
     z-index: 10;
 `
-export const ButtonS = styled.button.attrs((props: any) => props)`
+export const ButtonS = styled.button<ButtonSProps>`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -169,7 +207,7 @@ export const ButtonS = styled.button.attrs((props: any) => props)`
     padding: ${(props) => props.padding || '0.5rem 0.75rem'};
     font-size: ${(props) => props?.fontSize || '1rem'};
     font-weight: ${(props) => props.fontWeight || '500'};
-    color: ${(props) => props.color || props.color || '#e0e0e0'};
+    color: ${(props) => props.color || '#e0e0e0'};
     background-color: ${(props) => props.backgroundColor || props.colors || '#00adef'};
     border-radius: ${(props) => props.borderRadius || '0.375rem'};
     border-width: ${(props) => props.borderWidth || '0px'};
@@ -183,12 +221,12 @@ export const ButtonS = styled.button.attrs((props: any) => props)`
     font-family: inherit;
 
     &:hover {
-        background-color: ${(props) => '#00adef' || '#000'};
+        background-color: #00adef;
         cursor: pointer;
     }
 
     &:focus-visible {
-        outline: 2px solid ${(props) => '#00adef' || '#000'};
+        outline: 2px solid #00adef;
         outline-offset: 2px;
     }
 

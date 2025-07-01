@@ -9,11 +9,12 @@ import theme from './theme'
 import { ThemeProvider } from '@mui/material/styles'
 import { ParallaxProvider } from 'react-scroll-parallax'
 import { UserDataProvider } from 'context/UserDataContext'
+import AnalyticsWrapper from './components/AnalyticsWrapper'
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <Root />,
+        element: <AnalyticsWrapper><Root /></AnalyticsWrapper>,
         errorElement: <ErrorPage />,
     },
 ])

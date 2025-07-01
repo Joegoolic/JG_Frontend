@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Box } from '@mui/material'
 import { Parallax } from 'react-scroll-parallax'
 import { useInView } from 'react-intersection-observer'
@@ -7,15 +7,20 @@ import { Spacer } from 'components/Spacer/Spacer'
 import { Item } from 'components/Item/Item'
 import styled, { css } from 'styled-components'
 import useMediaQuery from '@mui/material/useMediaQuery'
-import { UserDataContext } from 'context/UserDataContext'
+import { useUserData } from 'context/UserDataContext'
 import { AnimatedContainer, ButtonS } from 'components/styled'
+import { TDatum } from 'data/datum'
 
-export default function Datum(props) {
+interface DatumProps {
+    data: TDatum[string];
+}
+
+export default function Datum(props: DatumProps) {
     const { ref, inView, entry } = useInView({
         /* Optional options */
         threshold: 0.5,
     })
-    const { thin } = useContext(UserDataContext)
+    const { thin } = useUserData()
     const widerSide = thin
         ? 'left'
         : props.data.Widths.Width1 < props.data.Widths.Width3
