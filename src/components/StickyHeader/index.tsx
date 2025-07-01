@@ -5,7 +5,7 @@ export default function StickyHeader() {
     const [isShown, setIsShown] = useState(false)
     const [whatIsShown, setWhatIsShown] = useState('')
 
-    const handleHover = (name, isHover: boolean) => {
+    const handleHover = (name: string, isHover: boolean) => {
         if (isHover) {
             setIsShown(true)
             setWhatIsShown(name)
@@ -22,13 +22,13 @@ export default function StickyHeader() {
                         <button
                             onMouseEnter={() => handleHover(data, true)}
                             onMouseLeave={() => handleHover(data, false)}
-                            key={`${headerDatum[data].name}`}
+                            key={`${headerDatum[data as keyof typeof headerDatum].name}`}
                             className="stickyHeaderIconButton"
                         >
-                            <a target="_blank" href={`${headerDatum[data].link}`}>
+                            <a target="_blank" href={`${headerDatum[data as keyof typeof headerDatum].link}`}>
                                 <img
                                     className="stickyHeaderIcon"
-                                    src={`${headerDatum[data].icon}`}
+                                    src={`${headerDatum[data as keyof typeof headerDatum].icon}`}
                                 />
                             </a>
                         </button>

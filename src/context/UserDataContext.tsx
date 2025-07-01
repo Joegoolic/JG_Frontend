@@ -1,9 +1,18 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, ReactNode } from 'react'
 import { createContext } from 'react'
 
-export const UserDataContext = createContext(null)
+interface UserDataContextType {
+    thin: boolean;
+    setThin: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-export function UserDataProvider({ children }) {
+export const UserDataContext = createContext<UserDataContextType | null>(null)
+
+interface UserDataProviderProps {
+    children: ReactNode;
+}
+
+export function UserDataProvider({ children }: UserDataProviderProps) {
     const breakpoints = {
         xs: 0,
         sm: 1024,
@@ -25,9 +34,17 @@ export function UserDataProvider({ children }) {
         }
         window.addEventListener('resize', handleResize)
         return () => window.removeEventListener('resize', handleResize)
-    }, [])
+    }, [breakpoints.sm])
 
     return <UserDataContext.Provider value={{ thin, setThin }}>{children}</UserDataContext.Provider>
+}
+
+export function useUserData() {
+    const context = React.useContext(UserDataContext)
+    if (!context) {
+        throw new Error('useUserData must be used within a UserDataProvider')
+    }
+    return context
 }
 
 function getWindowDimensions() {

@@ -21,8 +21,14 @@ interface FormValues {
 
 export default function Contact() {
     const form = useRef<HTMLFormElement>(null)
-    const sendEmail = (e) => {
+    const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
+        
+        if (!form.current) {
+            console.error('Form reference is null')
+            return
+        }
+        
         emailjs
             .sendForm(
                 import.meta.env.VITE_EMAIL_SERVICE,
@@ -32,10 +38,11 @@ export default function Contact() {
             )
             .then(
                 (result) => {
-                    form.current.reset()
+                    form.current?.reset()
                 },
                 (error) => {
-                    form.current.reset()
+                    console.error('Email send failed:', error)
+                    form.current?.reset()
                 }
             )
     }

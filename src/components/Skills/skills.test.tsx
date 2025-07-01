@@ -13,16 +13,19 @@ describe('Open Skills page', () => {
     test('renders correctly', () => {
         render(
             <ParallaxProvider>
-                <UserDataContext.Provider value={true}>
+                <UserDataContext.Provider value={{ thin: true, setThin: () => {} }}>
                     <Skills />
                 </UserDataContext.Provider>
             </ParallaxProvider>
         )
         mockAllIsIntersecting(true)
-        const skills_ = useDatumType('Skill').map((datum) => {
-            screen.getByText(`${datum.Name}`)
-        })
+        const skills = useDatumType('Skill')
+        if (skills) {
+            skills.forEach((datum) => {
+                screen.getByText(`${datum.Name}`)
+            })
+        }
 
-        expect(skills_).toBeTruthy()
+        expect(skills).toBeTruthy()
     })
 })

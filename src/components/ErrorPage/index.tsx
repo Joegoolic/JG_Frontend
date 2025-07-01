@@ -1,11 +1,11 @@
-import { useState, useEffect, useContext } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { UserDataContext } from 'context/UserDataContext'
+import { useUserData } from 'context/UserDataContext'
 import { BoxAny } from 'components/styled'
 
 function ErrorPage() {
     const navigate = useNavigate()
-    const { thin } = useContext(UserDataContext)
+    const { thin } = useUserData()
     const [countdown, setCountdown] = useState(5)
 
     const handleClick = () => {

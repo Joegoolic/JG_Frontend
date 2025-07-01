@@ -1,7 +1,7 @@
 //React
-import React, { useContext } from 'react'
+import React from 'react'
 //React Context
-import { UserDataContext } from 'context/UserDataContext'
+import { useUserData } from 'context/UserDataContext'
 
 //Intersection Observer
 import { useInView } from 'react-intersection-observer'
@@ -21,7 +21,7 @@ export default function Introduction() {
     const { ref, inView, entry } = useInView({
         threshold: 0.4,
     })
-    const { thin } = useContext(UserDataContext)
+    const { thin } = useUserData()
     return (
         <IntroGrid thin={thin}>
             <IntroImageContainer thin={thin}>
