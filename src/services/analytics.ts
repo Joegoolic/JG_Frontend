@@ -88,6 +88,10 @@ class AnalyticsService {
     if (segments.length === 0) return 'home';
     return segments[0];
   }
+
+  resetPageStartTime(): void {
+    this.pageStartTime = Date.now();
+  }
 }
 
 // Create singleton instance
@@ -103,7 +107,7 @@ document.addEventListener('visibilitychange', () => {
   if (document.hidden) {
     analytics.sendFinalDuration();
   } else {
-    analytics.pageStartTime = Date.now();
+    analytics.resetPageStartTime();
   }
 });
 
