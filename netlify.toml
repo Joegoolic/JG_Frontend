@@ -1,5 +1,5 @@
 [build]
-  base = "JG_Frontend/JG_Frontend"
+  base = "JG_Frontend"
   command = "npm run build"
   publish = "dist"
 
