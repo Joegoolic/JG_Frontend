@@ -6,6 +6,7 @@
         "lib": ["DOM", "DOM.Iterable", "ESNext"],
         "allowJs": false,
         "skipLibCheck": true,
+        "noImplicitAny": false,
         "esModuleInterop": false,
         "allowSyntheticDefaultImports": true,
         "strict": true,
@@ -25,5 +26,6 @@
         }
     },
     "include": ["src", "src/types", ".src/setupTest.ts"],
+    "exclude": ["src/**/*.test.ts", "src/**/*.test.tsx", "src/**/*.spec.ts", "src/**/*.spec.tsx"],
     "references": [{ "path": "./tsconfig.node.json" }]
 }
